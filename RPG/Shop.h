@@ -1,13 +1,14 @@
+#pragma once
 #include <iostream>
 using namespace std;
 class Shop
 {
 	int ok;
 	int bronze;
-	double damage;
+
 	double damaegdone;
 public:
-	Shop(int bronzeZ,int okP,double damageP) : bronze{ bronzeZ }, ok{ okP }, damage{ damageP }, damaegdone{ damage }
+	Shop(int bronzeZ,int okP,double damageP) : bronze{ bronzeZ }, ok{ okP }, damaegdone{ damageP }
 	{
 		
 		switch (okP)

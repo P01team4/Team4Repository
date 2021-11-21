@@ -5,7 +5,7 @@ int main()
 {
 
 	string nick;
-	Chose game({ "New Game", "Exit" });
+	Chose game("RPG",{ "New Game", "Exit" });
 
 
 	switch (game.getChose())

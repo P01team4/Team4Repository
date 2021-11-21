@@ -1,41 +1,47 @@
 #include <iostream>
+#include <string>
 using namespace std;
 class HpMpBars
 {
+	string full;
 	int hp;
 	int maxhp;
 	int mp;
 	int maxmp;
 public:
-	HpMpBars(int hpP, int maxhpP, int mnP, int maxmnP) : hp { hpP }, maxhp{ maxhpP },mp{ mnP } , maxmp{ maxmnP }{}
-	void getBars()
+	HpMpBars(int hpP, int maxhpP, int mnP, int maxmnP) : hp{ hpP }, maxhp{ maxhpP }, mp{ mnP }, maxmp{ maxmnP }, full{ "" } {}
+	string getBars()
 	{
-		cout << "HP: [";
+		full.append("HP: [");
 		for (int i = 1; i <= maxhp; ++i)
 		{
-			if (hp <= i)
+			if (hp < i)
 			{
-				cout << " ";
+				full.append(" ");
 			}
 			else
 			{
-				cout << "|";
+				full.append("|");
 			}
-			cout << "]" << endl;
+			
 		}
-		cout << "MP: {";
+		full.append("]\n");
+		full.append("MP: {");
 		for (int i = 1; i <= maxmp; ++i)
 		{
-			if (mp <= i)
+			if (mp < i)
 			{
-				cout << " ";
+				full.append(" ");
+
 			}
 			else
 			{
-				cout << "|";
+				full.append("|");
 			}
-			cout << "}" << endl;
+			
 		}
+		full.append("}\n");
+		return full;
 
 	}
 };
