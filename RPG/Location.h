@@ -1,0 +1,5 @@
+class Location
+{    
+    int ok;
+    
+};
