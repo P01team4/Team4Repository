@@ -16,7 +16,6 @@ class Haracterist
 	int expspear;
 	int expfist;
 	int exp;
-	
 	int bronze;
 	string full;
 
@@ -65,7 +64,7 @@ public:
 		full.append(to_string((exp - (exp % 10)) / 10));
 		full.append("\n");
 		
-		full.append("Damaege: ");
+		full.append("Damage: ");
 		full.append(to_string(int(damage * (wepon + ((exp - (exp % 10)) / 20)))));
 		full.append("\n");
 

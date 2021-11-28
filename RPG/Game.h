@@ -27,7 +27,7 @@ public:
 		
 		while(1)
 		{ 
-			Chose city("City",{ "Shop", "Adventure", "Player", "Exit" });
+			Chose city("City",{ "Shop", "Adventure", "Player", "Exit"});
 			switch (city.getChose())
 			{
 				case 1: // Shop
