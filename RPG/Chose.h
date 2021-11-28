@@ -1,23 +1,29 @@
 #pragma once
 #include <iostream>
 #include <conio.h>
+#include <math.h>
 #include <cstdarg>
 
 using namespace std;
 class Chose
 {
-	int ok;
+	const int ok;
 	char ch;
 	int a;
+	int b;
+	int c;
+	int csize;
+	const int oka;
+	const int okb;
 	string stri;
 	string* str;
 public:
-	
-	Chose(string strpp,const initializer_list<string> &args) : ok { int(args.size()) }, a{ 0 } , stri{ strpp }
+
+	Chose(string strpp, const initializer_list<string>& args) : ok{ int(args.size()) }, a{ 0 }, b{ 0 }, c{ 0 }, oka{ 4 }, okb{ 2 }, stri{ strpp }
 	{
-		
+		csize = int(ceil((double)ok / (oka * okb))) ;
 		int i = 0;
-		str = new string[ok];
+		str = new string[oka*okb*csize];
 		for (string strp : args)
 		{
 			str[i++] =  strp;
@@ -55,6 +61,95 @@ public:
 			cout << "\033[2J\033[1;1H";
 		}
 		return a+1;
+	}
+	int getchoseplus()
+	{
+		while (ch != ' ' and ch != 13 and ch != 27) {
+			cout << stri << endl;
+			for (int i = 0; i < oka; ++i)
+			{
+				for (int j = 0; j < okb;++j)
+				{
+					if (i == a && j == b)
+					{
+						cout << "-";
+					}
+					cout << str[oka*okb*c+oka*j+i] <<" " ;
+				}
+				cout << endl;
+				
+			}
+			cout << c+1 << endl;
+			cout << oka * okb * c + oka * b + a << endl;
+			ch = _getch();
+
+			if (ch == 'w' or ch == 'W' or ch == 'H')
+			{
+				a--;
+				if (a < 0)
+				{
+					a = oka - 1;
+					
+					while (str[oka * okb * c + oka * b + a] == "")
+					{
+						a--;
+					}
+				}
+			}
+			else if (ch == 'd' or ch == 'D')
+			{
+				b++;
+				
+				if (b > okb-1)
+				{
+					b=0;
+					c += 1;
+					
+				}
+				if (oka * okb * c + oka * b + a > ok - 1)
+				{
+					c = 0;
+					b = 0;
+				}
+				
+			}
+			else if (ch == 'a' or ch == 'A')
+			{
+				b--;
+				if (b < 0)
+				{
+					
+					c -= 1;
+					b = okb - 1;
+					if (c < 0)
+					{
+						c = csize - 1;
+						if (oka * okb * c + oka * b + a > ok - 1)
+						{
+							b = 0;
+							if (oka * okb * c + oka * b + a > ok - 1)
+							{
+								c -= 1;
+								b = okb - 1;
+								
+							}
+						}
+						
+					}
+					
+				}
+			}
+			else if (ch == 's' or ch == 'S' or ch == 'P')
+			{
+				a++;
+				if (a > (oka - 1) or str[oka * okb * c + oka * b + a] == "")
+				{
+					a = 0;
+				}
+			}
+			cout << "\033[2J\033[1;1H";
+		}
+		return oka * okb * c + oka * b + a + 1;
 	}
 
 	

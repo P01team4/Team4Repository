@@ -144,6 +144,7 @@
     <ClCompile Include="Haracterist.cpp" />
     <ClCompile Include="HpMpBars.cpp" />
     <ClCompile Include="Location.cpp" />
+    <ClCompile Include="Locationstep.cpp" />
     <ClCompile Include="RPG.cpp" />
     <ClCompile Include="Shop.cpp" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="Haracterist.h" />
     <ClInclude Include="HpMpBars.h" />
     <ClInclude Include="Location.h" />
+    <ClInclude Include="Locationstep.h" />
     <ClInclude Include="Shop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

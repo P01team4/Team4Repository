@@ -1,5 +1,13 @@
+#include <iostream>
+using namespace std;
 class Location
 {    
-    int ok;
-    
+
+	string Dust;
+	string Tundra;
+	string Sea;
+	string Forest;
+public:
+
+
 };

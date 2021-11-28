@@ -36,6 +36,9 @@
     <ClCompile Include="Haracterist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Locationstep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Haracterist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Locationstep.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
