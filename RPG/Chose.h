@@ -6,14 +6,20 @@
 using namespace std;
 class Chose
 {
+	const int oka;
+	const int okb;
+	int c;
+	int b;
+	int csize;
 	int ok;
 	char ch;
 	int a;
+	int zero;
 	string stri;
 	string* str;
 public:
 
-	Chose(string strpp, const initializer_list<string>& args) : ok{ int(args.size()) }, a{ 0 }, b{ 0 }, c{ 0 }, oka{ 150 }, okb{ 150 }, stri{ strpp }
+	Chose(string strpp, const initializer_list<string>& args) : ok{ int(args.size()) }, a{ 0 }, b{ 0 }, c{ 0 }, oka{ 4 }, okb{ 2 }, stri{ strpp }
 	{
 		
 		int i = 0;
@@ -23,6 +29,7 @@ public:
 			str[i++] =  strp;
 		}
 	}
+
 	int getChose()
 	{
 		while (ch != ' ' and ch != 13) {
@@ -143,9 +150,13 @@ public:
 			}
 			cout << "\033[2J\033[1;1H";
 		}
-		return oka * okb * c + oka * b + a + 1;
+		zero = oka * okb * c + oka * b + a + 1;
+		return zero;
 	}
-
+	int getnumber()
+	{
+		return zero;
+	}
 	
 	~Chose()
 	{

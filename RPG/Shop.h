@@ -5,12 +5,15 @@ class Shop
 {
 	int ok;
 	int bronze;
-
+	string bag[80];
 	double damaegdone;
 public:
-	Shop(int bronzeZ,int okP,double damageP) : bronze{ bronzeZ }, ok{ okP }, damaegdone{ damageP }
+	Shop(int bronzeZ,int okP,double damageP,string bagp[80]) : bronze{ bronzeZ }, ok{ okP }, damaegdone{ damageP }
 	{
-		
+		for (int i = 0; i < 80; ++i)
+		{
+			bag[i] = bagp[i];
+		}
 		switch (okP)
 		{
 		case 1:
@@ -19,8 +22,15 @@ public:
 		case 2:
 			buySpear();
 			break;
-
 		case 3:
+		{
+			
+		}
+		case 4:
+		{
+			break;
+		}
+		case 5:
 			cout << "Bye" << endl;
 			break;
 		}
@@ -51,6 +61,54 @@ public:
 			cout << "Thank you for your purchase" << endl;
 			damaegdone = 1.7;
 			bronze -= 15;
+		}
+	}
+	void buyHealPotion()
+	{
+		cout << "\033[2J\033[1;1H";
+		if (bronze < 15)
+		{
+			cout << "Sorry you dont have money for heal potion. Go away!" << endl;
+		}
+		else if (bag[79] != "")
+		{
+			cout << "Sorry your bag full. Go away!" << endl;
+		}
+		else
+		{
+			cout << "Thank you for your purchase" << endl;
+			for (int i = 0; i < 80; ++i)
+			{
+				if (bag[i] == "")
+				{
+					bag[i] = "Heal Potion";
+					break;
+				}
+			}
+		}
+	}
+	void buyManaPotion()
+	{
+		cout << "\033[2J\033[1;1H";
+		if (bronze < 15)
+		{
+			cout << "Sorry you dont have money for mana potion. Go away!" << endl;
+		}
+		else if (bag[79] != "")
+		{
+			cout << "Sorry your bag full. Go away!" << endl;
+		}
+		else
+		{
+			cout << "Thank you for your purchase" << endl;
+			for (int i = 0; i < 80; ++i)
+			{
+				if (bag[i] == "")
+				{
+					bag[i] = "Mana Potion";
+					break;
+				}
+			}
 		}
 	}
 

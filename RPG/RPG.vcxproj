@@ -141,20 +141,26 @@
   <ItemGroup>
     <ClCompile Include="Adventure.cpp" />
     <ClCompile Include="Chose.cpp" />
+    <ClCompile Include="Fight.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Haracterist.cpp" />
     <ClCompile Include="HpMpBars.cpp" />
     <ClCompile Include="Location.cpp" />
+    <ClCompile Include="LocationStep.cpp" />
+    <ClCompile Include="Poution.cpp" />
     <ClCompile Include="RPG.cpp" />
     <ClCompile Include="Shop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adventure.h" />
     <ClInclude Include="Chose.h" />
+    <ClInclude Include="Fight.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Haracterist.h" />
     <ClInclude Include="HpMpBars.h" />
     <ClInclude Include="Location.h" />
+    <ClInclude Include="LocationStep.h" />
+    <ClInclude Include="Poution.h" />
     <ClInclude Include="Shop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

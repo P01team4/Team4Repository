@@ -2,6 +2,8 @@
 #include <iostream>
 #include <conio.h>
 #include "HpMpBars.h"
+#include "Chose.h"
+#include "Poution.h"
 using namespace std;
 class Haracterist
 {
@@ -22,9 +24,12 @@ class Haracterist
 	string full;
 
 public:
-	Haracterist(string nickp, int damagep, int hpp, int maxhpp, int manap, int maxmanap, double weponp, int expswordp, int expspearp, int expfistp, int bronzep) : nick{ nickp }, damage{ damagep }, hp{ hpp }, maxhp{ maxhpp }, mana{ manap }, maxmana{ maxmanap }, wepon{ weponp }, expsword{ expswordp }, expspear{ expspearp }, expfist{ expfistp }, bronze{ bronzep }, full{ "" }
+	Haracterist(string nickp, int damagep, int hpp, int maxhpp, int manap, int maxmanap, double weponp, int expswordp, int expspearp, int expfistp, int bronzep,string bagp) : nick{ nickp }, damage{ damagep }, hp{ hpp }, maxhp{ maxhpp }, mana{ manap }, maxmana{ maxmanap }, wepon{ weponp }, expsword{ expswordp }, expspear{ expspearp }, expfist{ expfistp }, bronze{ bronzep }, full{ "" }
 	{
-		
+		for (int i = 0; i < 80; ++i)
+		{
+			bag[i] = bagp[i];
+		}
 	}
 	string getwepon()
 	{
@@ -87,14 +92,33 @@ public:
 				cout << "Nick: ";
 				cin >> nick;
 				cout << "\033[2J\033[1;1H";
-				return nick;
+				
 				break;
 			case 2:
+				string ko;
+				Chose Bager("Bag",bag);
+				Poution pou(bag[Bager.getchoseplus()], hp, mana, maxhp, maxmana);
+				pou.GetHP();
+				pou.GetMP();
+				bag[Bager.getnumber()] = "";
+				for (int i = Bager.getnumber(); i < 80; ++i)
+				{
+					if (bag[i + 1] == "")
+					{
+						break;
+					}
+					else
+					{
+						ko = i + 1;
+						bag[i + 1] = "";
+						bag[i] = ko;
+					}
+				}
+
 				
-				return nick;
 				break;
 			case 3:
-				return nick;
+				
 				break;
 		}
 		return nick;

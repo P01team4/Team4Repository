@@ -1,6 +1,8 @@
+
 #include <iostream>
 #include <ctime>
 using namespace std;
+    
 class Location
 {  
 	char ok[22500];
@@ -13,13 +15,9 @@ public:
 		for (int i = 0; i < 22500; ++i)
 		{
 
-			ok[i] == 'F';
 			
-			if ((i + 1) % 150 == 0)
-			{
-				a++;
-			}
-			if (a < 5)
+			
+			if (a < 50)
 			{
 				if (i - a * 150 < 50)
 				{
@@ -27,7 +25,7 @@ public:
 				}
 				else if (i - a * 150 > 100)
 				{
-					ok[i] = 'S';
+					ok[i] = 'T';
 				}
 				else if (i - a * 150 > 50 && i - a * 150 < 100)
 				{
@@ -35,7 +33,7 @@ public:
 				}
 				
 			}
-			else if (a>5 && a < 10)
+			else if (a>50 && a < 100)
 			{
 				if (i - a * 150 < 50)
 				{
@@ -50,7 +48,7 @@ public:
 					ok[i] = 'R';
 				}
 			}
-			else if (a > 10)
+			else if (a > 100)
 			{
 				if (i - a * 150 < 50)
 				{
@@ -65,8 +63,11 @@ public:
 					ok[i] = 'C';
 				}
 			}
-			
-			if ((1 + rand() % 100) == 1)
+			if ((i + 1) % 150 == 0)
+			{
+				a++;
+			}
+			if ((1 + rand() % 100) <= 3)
 			{
 				if (i == 5624)
 				{
@@ -74,13 +75,14 @@ public:
 				}
 				else
 				{
-					ok[i] == '0';
+					ok[i] = '0';
 				}
 			}
 		}
 		
 	}
-	char[] getmap
+	
+	char* getmap()
 	{
 		return ok;
 	}

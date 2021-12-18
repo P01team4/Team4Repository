@@ -3,11 +3,13 @@
 #include "Shop.h"
 #include "Haracterist.h"
 #include "Location.h"
+#include "Adventure.h"
 using namespace std;
 
 class Game
 {
 	string nick;
+	string bag[80];
 	int hp;
 	int maxhp;
 	int mana;
@@ -24,6 +26,7 @@ public:
 	void City()
 	{
 		cout << "\033[2J\033[1;1H";
+		Location map();
 		
 		
 		while(1)
@@ -33,23 +36,22 @@ public:
 			{
 				case 1: // Shop
 				{
-					Chose Shope("Hello traveler! Buy what you want",{ "Sword - 10 br", "Spear - 15 br", "Back" });
-					Shop sh(bronze, Shope.getChose(), wepon);
+					Chose Shope("Hello traveler! Buy what you want",{ "Sword - 10 br", "Spear - 15 br","Heal Potion - 5 br","Mana Potion - 5 br", "Back"});
+					Shop sh(bronze, Shope.getchoseplus(), wepon);
 					wepon = sh.getDamage();
 					bronze = sh.getBronze();
 					break;
 				}
 				case 2: // Adventure
 				{
-					Location a();
-					Chose Location("MAP", )
+					Adventure gogo(nick,map.getmap());
 					break;
 				}
 
 				case 3: // Player
 				{
-					Haracterist Har(nick, damage, hp, maxhp, mana, maxmana, wepon, expsword, expspear, expfist, bronze);
-					Chose hor(Har.GetHar(), {"Change Name","Back"});
+					Haracterist Har(nick, damage, hp, maxhp, mana, maxmana, wepon, expsword, expspear, expfist, bronze,bag);
+					Chose hor(Har.GetHar(), {"Change Name","Bag","Back"});
 					nick = Har.NewName(hor.getChose());
 					break;
 				}
