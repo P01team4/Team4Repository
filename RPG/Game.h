@@ -2,6 +2,7 @@
 #include "Chose.h"
 #include "Shop.h"
 #include "Haracterist.h"
+#include "Location.h"
 using namespace std;
 
 class Game
@@ -40,7 +41,8 @@ public:
 				}
 				case 2: // Adventure
 				{
-
+					Location a();
+					Chose Location("MAP", )
 					break;
 				}
 

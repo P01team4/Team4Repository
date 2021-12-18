@@ -6,6 +6,7 @@ using namespace std;
 class Haracterist
 {
 	string nick;
+	string bag[80];
 	int damage;
 	int hp;
 	int maxhp;
@@ -21,7 +22,7 @@ class Haracterist
 	string full;
 
 public:
-	Haracterist(string nickp, int damagep, int hpp, int maxhpp, int manap, int maxmanap, double weponp, int expswordp, int expspearp, int expfistp, int bronzep) : nick{ nickp }, damage{ damagep }, hp{ hpp }, maxhp{ maxhpp }, mana{ manap }, maxmana{ maxmanap }, wepon{ weponp }, expsword{ expswordp }, expspear{ expspearp }, expfist{ expfistp }, bronze{ bronzep },full{""}
+	Haracterist(string nickp, int damagep, int hpp, int maxhpp, int manap, int maxmanap, double weponp, int expswordp, int expspearp, int expfistp, int bronzep) : nick{ nickp }, damage{ damagep }, hp{ hpp }, maxhp{ maxhpp }, mana{ manap }, maxmana{ maxmanap }, wepon{ weponp }, expsword{ expswordp }, expspear{ expspearp }, expfist{ expfistp }, bronze{ bronzep }, full{ "" }
 	{
 		
 	}
@@ -89,6 +90,10 @@ public:
 				return nick;
 				break;
 			case 2:
+				
+				return nick;
+				break;
+			case 3:
 				return nick;
 				break;
 		}
